@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/Snapchat-1240884638.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bryan's authentics</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+<nav>
+<div class="left">
+<a href="/index.html">Bryan Authentic's</a>
+</div>
+<div class="right">
+<a href="https://github.com/bryanbudah" target="_blank"><i class="fa-brands fa-github"></i><span>Github</span></a>
+<a href="https://www.linkedin.com/in/bryan-k-25025387/" target="_blank"><i class="fa-brands fa-linkedin"></i><span>Linkedin</span></a>
+<a href="mailto:kariukibryan6@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span>E-mail</span></a>
+</div>
+</nav>
+<main>
+<section class="hero-section">
+<div class="text">
+<h2>Hi,My name is Bryan Kariuki </h2>
+<p>I am a fullstack developer proficient in html,css and javascript.
+I am also a freelance writer in various subjects ranging from sports,human intrest stories and science.
+hence bryan is the name web development is the game.
+</p>
+<div class="links">
+<a href="#skills">
+<i class="fa-solid fa-code"></i>   
+ <span>skills</span>   
+</a>
+<a href="#testimony">
+    <i class="fa-solid fa-pen"></i>   
+     <span>testimony</span>   
+    </a>
+    <a href="#contact">
+        <i class="fa-solid fa-envelope"></i>   
+         <span>contact</span>   
+        </a>
+
+
+
+</div>
+</div>
+<div class="image">
+<img src="images/Snapchat-1240884638.jpg" alt="Bryan image">
+</div>
+</section>
+<section id="skills" class="skills-section">
+<h2>Skills</h2>
+<div class="text">I am proficioent in the below.i also do some writing on the side under the alias "smokin joe kariuki"
+    you can check out some of my stories and my other site dedicated to my son on the link below.<br>
+
+    <a href="bryan web stories/bryan web stories/index1.html" target="_blank">Bryan's web stories.
+    <a href="images/carlos.flexbox/carlos.html" target="_blank">Carlo's first home page</div>
+<div class="cells">
+
+<div class="cell">
+<img src="images/html-logo.webp"alt="html">
+<span>HTML</span>
+</div>
+
+<div class="cell">
+    <img src="images/css-logo.webp"alt="css">
+    <span>CSS</span>
+</div>
+
+<div class="cell">
+<img src="images/javascript-logo.webp"alt="javascript">
+<span>javascript</span>
+</div>
+
+<div class="cell">
+<img src="images/node-logo.webp"alt="node">
+<span>NODE</span>
+</div>
+
+<div class="cell">
+<img src="images/react-logo.webp"alt="react">
+<span>REACT</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="testimony" class="testimony-section">
+<h2>Testimony</h2>
+<div class="group">
+<div class="person-details">
+    <img src="images/testimony-headshot.webp" alt="testimony-headshot">
+    <p>John Doe</p>
+    <p>Lorem ipsum dolor sit.</p>
+</div>
+<div class="text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Est velit ipsam ut facere! Fugiat dolor perferendis officiis voluptates, deleniti accusantium, eligendi unde, libero eos suscipit quo consequuntur magnam delectus aperiam corporis! Voluptates doloribus corrupti dolor? Iste eos, nisi obcaecati, asperiores cupiditate a, consequuntur odio vitae ab nihil rem? Sint, dignissimos".</div>
+</div>
+</section>
+<section id="contact" class="contact-section">
+<h2>Contact</h2>
+<div class="group">
+<div class="text">
+Hey there, you can always reach out for my services or for any comment or critiscm.
+</div>
+<form>
+    <label for="name">Name</label>
+    <input type="text" id="name">
+
+
+<label for="email">Email</label>
+          <input type="email" id="email">
+
+          <label for="message">Message</label>
+          <textarea id="message" cols="30" rows="10"></textarea>
+
+          <button type="submit">Send Message</button>
+</form>
+</div>
+
+</section>
+</main>
+<button data-theme-toggle>Toggle theme</button>
+<script>
+ const button = document.querySelector('[data-theme-toggle]');
+const html = document.querySelector('html');
+
+button.addEventListener('click', () => {
+  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+});   
+</script>
+</body>
+</html>
