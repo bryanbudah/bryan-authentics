@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tender Rose Sandwiches & Juices</title>
+</head>
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<style>
+body{
+    height: 100vh;
+    background-image: url("images/download.jpg");
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    margin: 0; /* Remove default margin */
+    color: white; /* Change text color for better visibility */
+
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    color:white;
+    background-color: grey;
+    padding: 15px;
+    opacity: 0.6; /* 50% opacity */
+}
+a{
+    text-decoration: none;
+    color: white;
+
+}
+a:hover{
+    color:black;
+    background-color:white;
+    transform: scale(1.2);
+}
+    .hero{
+position:relative;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.operations{
+    position:absolute;
+    top:500px;
+    left:5px;
+}
+h3{
+    background-color: black;
+    padding:2px;
+    border-radius: 4px;
+}
+h1{
+    animation: bounce 1s;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-700px); /* Start at original position */
+    }
+    40% {
+        transform: translateX(0px); /* Move up */
+    }
+    60% {
+        transform: translateYX(20px); /* Move down */
+    }
+}
+</style>
+<body>
+  <!-- Navbar (sit on top) -->
+<div class="navbar">
+<a href="index.html">HOME</a>
+<a href="menu.html">MENU</a>
+<a href="about.html">ABOUT</a>
+<a href="contact.html">CONTACT</a>
+</div>
+<!-- Header with image (sit on top) -->
+ <div class="hero">
+<h1>TENDER ROSE SANDWICHES &FRUIT JUICES</h1>
+<div class="operations">
+<h3>OPEN FROM 6 A.M-9 P.M</h3>
+</div>
+</div>
+</body>
+</html>
