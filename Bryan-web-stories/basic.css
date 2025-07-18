@@ -1,0 +1,54 @@
+
+
+.body{
+    background-color: grey;
+    margin: 10px;
+}
+p,h1,h2,img{
+    margin:10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container>div:nth-child(1n){
+    background-color: gray;
+}
+.container>div:nth-child(2n){
+    background-color: blanchedalmond;
+}
+.container>div:nth-child(3n){
+    background-color: whitesmoke;
+}
+img{
+        max-width: 300px;
+        height: auto;
+        border-radius: 50%;
+        display: flex;
+        justify-content:  center;
+}
+img:hover{
+    cursor: pointer;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #ff4081;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+a{
+    margin-top: 5px;
+    margin-right: auto;
+}
+
