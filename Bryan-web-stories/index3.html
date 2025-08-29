@@ -3,34 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The greatest sports team ever</title>
+    <title>All Blacks: The Greatest Sports Team Ever</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        black: {
+                            950: '#0d0d0d',
+                        },
+                        allblack: {
+                            50: '#f8f8f8',
+                            100: '#d9d9d9',
+                            500: '#333333',
+                            900: '#000000',
+                        },
+                        silverfern: {
+                            500: '#a7a7a7',
+                            700: '#6a6a6a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-comparison {
+            position: relative;
+        }
+        
+        .team-comparison::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #000000, #333333);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .haka-video {
+            transition: all 0.3s ease;
+        }
+        
+        .haka-video:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #000;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #000;
+        }
+    </style>
 </head>
-<link rel="stylesheet" href="basic.css">
-<body>
-    <h1 >All blacks: The greatest sports team in ever</h1>
-    <h3><i>By Smokin’ Joe</i></h3><br>
-    <p><font size="+2">W</font>ith Manchester City beating Manchester United 3-1 a few weeks ago  and seemingly looking comfortable and not even straining while doing it. It boggles the mind what they can achieve this season.
- They even look much stronger than last season where they were the first team in premier league history to reach 100 points out of a possible 114 and they were also the first team in history to score over 100 goals (they scored 106 goals).
-There closest rival, Manchester united was 19 points adrift. Currently in the 2018/2019 they have garnered 32 points out of a possible 33(we are 12 games into the season)
- It is absolutely frightening what this 2018/2019 city team could also achieve and this does not bode well for other teams in the league and are they creating a dynasty?
-This has brought about a conversation as to which is the greatest sports team in history. Is it Real Madrid who has won 13 champion league titles? While the closest rival has 6(Ac Milan).
-And six of the titles were won between 1955 to 1960 by the way while having a game winning percentage of 59.4 % since its inception in 1902.
-Or the Boston Celtics, which has won 17 NBA championships in its illustrious history (there are about 84 teams in the national basketball league).Or the 1980s Los Angeles Lakers who tore the NBA in that decade.
-Or better yet the 1990s Chicago Bulls who won six championships in seven years. The 2015/2016 Golden Warriors also come into mind where they won 73 games out of 84 on their way to their second championship even  breaking the 1996 record of 70 games held by the 1996 Chicago Bulls.
-Though the aforementioned statistics are impressive. The team that stands out among all other sports teams is New Zealand’s Rugby Team affectionately known as the all blacks.
-They have a 77.09% winning record since their inceptions in 1903.They have a winning record with all the teams they have played with since 1903.
-They have lost only to six teams in all the teams they have played with in their 100 year plus history.
-Get this in the last four years they have had a winning record of 93.06%.Mindboggling I know. They have held the number one world ranking longer than all other teams combined.
-<img src="rugby.jpg" alt="This is rugby">
+<body class="bg-allblack-50 text-allblack-900">
+    <!-- Header Section -->
+    <header class="bg-allblack-900 text-white py-12 px-4 md:px-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-allblack-900 to-silverfern-700 opacity-90"></div>
+        <div class="container mx-auto max-w-4xl relative z-10">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2 text-center fade-in">All Blacks: The Greatest Sports Team Ever</h1>
+            <h3 class="text-xl text-center italic fade-in"><i>By Smokin' Joe</i></h3>
+            
+            <div class="mt-8 flex justify-center space-x-4">
+                <button id="readAloudBtn" class="bg-allblack-500 hover:bg-allblack-900 text-white px-4 py-2 rounded-full flex items-center">
+                    <i class="fas fa-volume-up mr-2"></i> Read Aloud
+                </button>
+                <button id="toggleDarkMode" class="bg-silverfern-500 hover:bg-silverfern-700 text-white px-4 py-2 rounded-full flex items-center">
+                    <i class="fas fa-moon mr-2"></i> Dark Mode
+                </button>
+            </div>
+        </div>
+    </header>
 
-<i>South Africa vs. New Zealand Courtesy of www.stuff.co.nz</i><br>
-They have won the Rugby world cup thrice, more than any other nation. Including winning back to back World Cup titles in 2011 and 2015.They have been named world rugby team of the year ten times in the last seventeen years since the award was introduced.
-An All Black (a player on the New Zealand Rugby Team) has won the World Rugby player of the Year ten times since the award was introduced in 2001.
-Fifteen all blacks have been inducted to the International Rugby Hall of Fame.
-Against the British & Irish Lions, which is a combination of the home nations (England, Ireland, Wales and Scotland) they have won 30 of the 41 matches they have met in.
-They have also won the Rugby Championship which is a competition that includes New Zealand, South Africa, Australia and Argentina sixteen times out of the twenty four times they have competed in.
-This is not just dominance this is transcendence, almost biblical statistics. It even makes it more remarkable that a nation of five million can achieve what they have achieved.
-The above statistics make the All blacks hands down the greatest sports team in history and probably ever.
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-md z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center py-3">
+                <a href="#intro" class="mx-2 my-1 px-3 py-1 rounded-full bg-allblack-100 text-allblack-900 hover:bg-allblack-500 hover:text-white text-sm">Introduction</a>
+                <a href="#comparison" class="mx-2 my-1 px-3 py-1 rounded-full bg-allblack-100 text-allblack-900 hover:bg-allblack-500 hover:text-white text-sm">Team Comparison</a>
+                <a href="#stats" class="mx-2 my-1 px-3 py-1 rounded-full bg-allblack-100 text-allblack-900 hover:bg-allblack-500 hover:text-white text-sm">Statistics</a>
+                <a href="#achievements" class="mx-2 my-1 px-3 py-1 rounded-full bg-allblack-100 text-allblack-900 hover:bg-allblack-500 hover:text-white text-sm">Achievements</a>
+                <a href="#legacy" class="mx-2 my-1 px-3 py-1 rounded-full bg-allblack-100 text-allblack-900 hover:bg-allblack-500 hover:text-white text-sm">Legacy</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <!-- Introduction Section -->
+        <section id="intro" class="mb-16">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <p class="text-lg">
+                    <span class="text-3xl font-bold float-left mr-2">W</span>ith Manchester City beating Manchester United 3-1 a few weeks ago and seemingly looking comfortable and not even straining while doing it. It boggles the mind what they can achieve this season.
+                    They even look much stronger than last season where they were the first team in premier league history to reach 100 points out of a possible 114 and they were also the first team in history to score over 100 goals (they scored 106 goals).
+                    There closest rival, Manchester united was 19 points adrift. Currently in the 2018/2019 they have garnered 32 points out of a possible 33(we are 12 games into the season)
+                    It is absolutely frightening what this 2018/2019 city team could also achieve and this does not bode well for other teams in the league and are they creating a dynasty?
+                </p>
+            </div>
+        </section>
+
+        <!-- Team Comparison Section -->
+        <section id="comparison" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-allblack-900 border-b-2 border-allblack-500 pb-2">Greatest Teams Comparison</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8 team-comparison">
+                <p>This has brought about a conversation as to which is the greatest sports team in history. Is it Real Madrid who has won 13 champion league titles? While the closest rival has 6(Ac Milan).</p>
+                <p class="mt-4">And six of the titles were won between 1955 to 1960 by the way while having a game winning percentage of 59.4 % since its inception in 1902.</p>
+                <p class="mt-4">Or the Boston Celtics, which has won 17 NBA championships in its illustrious history (there are about 84 teams in the national basketball league).Or the 1980s Los Angeles Lakers who tore the NBA in that decade.</p>
+                <p class="mt-4">Or better yet the 1990s Chicago Bulls who won six championships in seven years. The 2015/2016 Golden Warriors also come into mind where they won 73 games out of 84 on their way to their second championship even breaking the 1996 record of 70 games held by the 1996 Chicago Bulls.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="stat-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-allblack-900 mb-4 text-center">Real Madrid</h3>
+                    <div class="text-center mb-4">
+                        <i class="fas fa-trophy text-3xl text-yellow-500"></i>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-star text-yellow-500 mr-2"></i>
+                            <span>13 Champions League titles</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                            <span>59.4% winning percentage</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="stat-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-allblack-900 mb-4 text-center">Boston Celtics</h3>
+                    <div class="text-center mb-4">
+                        <i class="fas fa-basketball-ball text-3xl text-green-600"></i>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                            <span>17 NBA championships</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="stats" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-allblack-900 border-b-2 border-allblack-500 pb-2">All Blacks Dominance</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <p>Though the aforementioned statistics are impressive. The team that stands out among all other sports teams is New Zealand's Rugby Team affectionately known as the all blacks.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                    <div class="stat-card bg-allblack-900 text-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-4xl font-bold mb-2">77.09%</div>
+                        <p class="text-sm">Winning record since 1903</p>
+                    </div>
+                    
+                    <div class="stat-card bg-allblack-900 text-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-4xl font-bold mb-2">93.06%</div>
+                        <p class="text-sm">Winning record in last 4 years</p>
+                    </div>
+                    
+                    <div class="stat-card bg-allblack-900 text-white p-6 rounded-lg shadow-md text-center">
+                        <div class="text-4xl font-bold mb-2">6</div>
+                        <p class="text-sm">Teams that have beaten them</p>
+                    </div>
+                </div>
+                
+                <p>They have a winning record with all the teams they have played with since 1903.</p>
+                <p class="mt-4">They have lost only to six teams in all the teams they have played with in their 100 year plus history.</p>
+                <p class="mt-4">Get this in the last four years they have had a winning record of 93.06%.Mindboggling I know. They have held the number one world ranking longer than all other teams combined.</p>
+            </div>
+            
+            <div class="flex justify-center mb-6">
+                <div class="rounded-lg overflow-hidden shadow-lg max-w-md">
+                    <img src="rugby.jpg" alt="South Africa vs. New Zealand" class="w-full">
+                    <div class="px-4 py-2 bg-white">
+                        <p class="text-sm italic text-gray-600 text-center">South Africa vs. New Zealand Courtesy of www.stuff.co.nz</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-allblack-900 border-b-2 border-allblack-500 pb-2">Remarkable Achievements</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="p-4 bg-allblack-50 rounded-lg">
+                        <h3 class="font-bold text-allblack-900 mb-2 flex items-center">
+                            <i class="fas fa-trophy text-yellow-600 mr-2"></i> World Cup Titles
+                        </h3>
+                        <p>They have won the Rugby world cup thrice, more than any other nation. Including winning back to back World Cup titles in 2011 and 2015.</p>
+                    </div>
+                    
+                    <div class="p-4 bg-allblack-50 rounded-lg">
+                        <h3 class="font-bold text-allblack-900 mb-2 flex items-center">
+                            <i class="fas fa-award text-purple-600 mr-2"></i> Team Awards
+                        </h3>
+                        <p>They have been named world rugby team of the year ten times in the last seventeen years since the award was introduced.</p>
+                    </div>
+                    
+                    <div class="p-4 bg-allblack-50 rounded-lg">
+                        <h3 class="font-bold text-allblack-900 mb-2 flex items-center">
+                            <i class="fas fa-user-circle text-blue-600 mr-2"></i> Player Awards
+                        </h3>
+                        <p>An All Black (a player on the New Zealand Rugby Team) has won the World Rugby player of the Year ten times since the award was introduced in 2001.</p>
+                    </div>
+                    
+                    <div class="p-4 bg-allblack-50 rounded-lg">
+                        <h3 class="font-bold text-allblack-900 mb-2 flex items-center">
+                            <i class="fas fa-medal text-red-600 mr-2"></i> Hall of Fame
+                        </h3>
+                        <p>Fifteen all blacks have been inducted to the International Rugby Hall of Fame.</p>
+                    </div>
+                </div>
+                
+                <p>Against the British & Irish Lions, which is a combination of the home nations (England, Ireland, Wales and Scotland) they have won 30 of the 41 matches they have met in.</p>
+                <p class="mt-4">They have also won the Rugby Championship which is a competition that includes New Zealand, South Africa, Australia and Argentina sixteen times out of the twenty four times they have competed in.</p>
+            </div>
+            
+            <div class="bg-allblack-900 text-white rounded-lg shadow-md p-6 text-center">
+                <h3 class="text-xl font-bold mb-4">Interactive Haka Experience</h3>
+                <p class="mb-4">The All Blacks are famous for performing the Haka, a traditional Māori war dance, before matches.</p>
+                <div class="haka-video bg-gray-800 rounded-lg p-4 cursor-pointer" onclick="playHakaVideo()">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/600x340/333333/ffffff?text=Click+to+Play+Haka+Video" alt="All Blacks Haka" class="rounded-lg w-full">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-5xl text-white opacity-80"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legacy Section -->
+        <section id="legacy" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-allblack-900 border-b-2 border-allblack-500 pb-2">Unmatched Legacy</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <p>This is not just dominance this is transcendence, almost biblical statistics. It even makes it more remarkable that a nation of five million can achieve what they have achieved.</p>
+                <p class="mt-4 font-bold text-lg">The above statistics make the All blacks hands down the greatest sports team in history and probably ever.</p>
+            </div>
+            
+            <div class="bg-allblack-50 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">All Blacks Historical Timeline</h3>
+                <div class="timeline-item">
+                    <h4 class="font-bold">1903</h4>
+                    <p>Team inception with a 77.09% winning record since</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="font-bold">2011 & 2015</h4>
+                    <p>Won back-to-back Rugby World Cup titles</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="font-bold">17 years</h4>
+                    <p>Named world rugby team of the year ten times in the last seventeen years</p>
+                </div>
+                <div class="timeline-item">
+                    <h4 class="font-bold">Present</h4>
+                    <p>Held the number one world ranking longer than all other teams combined</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-allblack-900 text-white py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="mb-4">A tribute to the greatest sports team in history</p>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="text-white hover:text-silverfern-500">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-silverfern-500">
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-silverfern-500">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+            </div>
+            <p class="text-silverfern-500 text-sm">© 2023 - All Blacks: The Greatest Sports Team Ever by Smokin' Joe</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-allblack-900 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in elements on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('opacity-100');
+                    backToTopBtn.classList.remove('opacity-0');
+                } else {
+                    backToTopBtn.classList.add('opacity-0');
+                    backToTopBtn.classList.remove('opacity-100');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Read aloud functionality
+            const readAloudBtn = document.getElementById('readAloudBtn');
+            let isReading = false;
+            let speech = null;
+            
+            readAloudBtn.addEventListener('click', () => {
+                if ('speechSynthesis' in window) {
+                    if (isReading) {
+                        // Stop reading
+                        window.speechSynthesis.cancel();
+                        readAloudBtn.innerHTML = '<i class="fas fa-volume-up mr-2"></i> Read Aloud';
+                        isReading = false;
+                    } else {
+                        // Start reading
+                        speech = new SpeechSynthesisUtterance();
+                        speech.text = document.body.textContent;
+                        speech.volume = 1;
+                        speech.rate = 1;
+                        speech.pitch = 1;
+                        
+                        window.speechSynthesis.speak(speech);
+                        readAloudBtn.innerHTML = '<i class="fas fa-stop mr-2"></i> Stop Reading';
+                        isReading = true;
+                        
+                        // Reset button when speech ends
+                        speech.onend = function() {
+                            readAloudBtn.innerHTML = '<i class="fas fa-volume-up mr-2"></i> Read Aloud';
+                            isReading = false;
+                        };
+                    }
+                } else {
+                    alert('Sorry, your browser does not support text-to-speech functionality.');
+                }
+            });
+            
+            // Dark mode toggle
+            const toggleDarkMode = document.getElementById('toggleDarkMode');
+            let isDarkMode = false;
+            
+            toggleDarkMode.addEventListener('click', () => {
+                isDarkMode = !isDarkMode;
+                if (isDarkMode) {
+                    document.body.classList.add('bg-allblack-900', 'text-white');
+                    document.body.classList.remove('bg-allblack-50', 'text-allblack-900');
+                    toggleDarkMode.innerHTML = '<i class="fas fa-sun mr-2"></i> Light Mode';
+                } else {
+                    document.body.classList.remove('bg-allblack-900', 'text-white');
+                    document.body.classList.add('bg-allblack-50', 'text-allblack-900');
+                    toggleDarkMode.innerHTML = '<i class="fas fa-moon mr-2"></i> Dark Mode';
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Haka video function
+        function playHakaVideo() {
+            alert("In a full implementation, this would play a video of the All Blacks performing the Haka. For now, enjoy this placeholder interaction!");
+        }
+    </script>
 </body>
 </html>
