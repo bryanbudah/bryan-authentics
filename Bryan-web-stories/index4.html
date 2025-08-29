@@ -4,53 +4,423 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infertility curse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        },
+                        rose: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .quote-container {
+            position: relative;
+        }
+        
+       
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
-<link rel="stylesheet" href="basic.css">
-<body>
-    <h1>The Infertility curse</h1>
-<h2><i>By Bryan “Smokin Joe” Kariuki</i></h2>
-<p>“Why aren’t you pregnant what is wrong with you are you cursed “That is what Jacqueline Mukami (real name withheld) was asked by her mother-in law recently.
-“I cry a lot alone no one comforts you everybody isolates you including your husband”. she says amid sobs while holding her handkerchief.
-“If you are not going to do what comes naturally I will marry another wife and kick you out”. Her husband always retorts every evening when he comes home drunk.
-”He has even stopped taking my food and sleeps in the guest bedroom. Sometimes I feel like committing suicide”. She sobs. Each year is her annus horribilis just because she can’t conceive.
-<a href="depressed woman.jpg"><img src="depressed woman.jpg"></a>
+<body class="bg-teal-50 text-gray-800">
+    <!-- Header Section -->
+    <header class="bg-teal-700 text-white py-12 px-4 md:px-8">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2 text-center fade-in">The Infertility Curse</h1>
+            <h2 class="text-xl md:text-2xl text-center italic fade-in"><i>By Bryan "Smokin Joe" Kariuki</i></h2>
+            
+            <div class="mt-8 text-center">
+                <button id="readAloudBtn" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-volume-up mr-2"></i> Read Aloud
+                </button>
+                <p class="text-teal-200 text-sm">Click to hear this article narrated</p>
+            </div>
+        </div>
+    </header>
 
-<i> depressed woman (courtesy of madamnoire.com)</i></br>
-<p>Jane Nafula (real name withheld) is another one longing for the “fruit of the womb”. 
-“When you are single they ask you when you are getting married and when you get married the next question is when you are getting a baby. We have tried”. She says (they have been married for 7 years).”
-“Every year we say this is our year but to no avail. Maybe God is testing our faith and resolve in him bless us with quatriplets”.She says while smiling wirily.
- She is lucky as her husband is very supportive of her condition. But the societal pressure is just too much. So much so that she has avoided many social engagements, parties and family gatherings because of the endless barrage of questions regarding her pregnancy and sometimes being hurled abuse and mocked by her own family and other kin.
-“When are you adding a family member?”
-“Utaname mama-in-law when?”
-“Why don’t you want to get pregnant by this man don’t you love him?”
-“Umechelewa sana kuitwa mum.Ona marafiki zako wameolewa na wakona watoto shule.unangoja?”
-Recently her youngest sister just got married last year and is expecting twins. She has also given social media a wide berth and has become a social pariah.
-“Every time I meet people and they ask me such questions not knowing that we have had eight miscarriages for the last six years. I feel like a steak is driving through my heart “she says painfully. 
-“My husband is a good man but I can see he is also suffering and is being pressured to add another wife by his family”. She laments decision that he is yet to make.”But it’s getting to him”. She says.
-Men have not been left behind. David Lessit (real name withheld) has also has a hidden confession.”I don’t think I can make a woman pregnant”. I have been in a come we stay relationship for three years and my girlfriend (who has a kid from a previous relationship) hasn’t gotten pregnant” (she is not on the pill).he says amid taking shots of vodka.
-“We have been having unprotected sex for the last two years once every three days. But still no kid. Having a male heir let alone a child is a big thing in my community. You are respected and you can walk and talk among elders. But what do I tell people back at home”. He says desperately.</p>
- <img src="a depressed man.jpg" alt="">
-<i>A depressed man (courtesy of pridenews.ca)</i></br>
-<p>According to Wikipedia infertility the inability to become pregnant/impregnate after 12 months of regular unprotected sex or carry a pregnancy to term.
- According also to population statistics 1 out of every five couples in Kenya struggle with infertility and 4.2 million Kenyans also need help to conceive or impregnate.
-According to Dr. Alfred Murage, a reproductive medicine consultant at Aga Khan University Hospital’s obstetrics and gynecology department, who has worked with couples who have had trouble conceiving naturally for ten years attributes that 30% of the time its due to women factors, 30% of the time is due to men factors and the remaining due to combination of the both male and female or unexplained factors.
-The most common cause of infertility in Kenya is blocked tubes. These can be caused by pelvic inflammatory diseases, which arise from unprotected sex with multiple partners and delays in treating sexually transmitted diseases. Irregular menses and ovulation cycles, previous abortions gone wrong thus affecting the uterus and tubes.
-Other causes in women include Fibroids Polycystic Ovarian Syndrome Lack of ovulation, Pelvic tuberculosis and Cancer treatments
-Sperms in many men worldwide has dropped by 50% since 1940.Some of the main causes are Low sperm count Heavy alcohol consumption drinking Heavy smoking, eating junk food, living a sedentary lifestyle without exercise Blocked tubes Men producing antibodies against their own spermA male with sex chromosomes of a genetic female that is XX instead of XYHaving an extra X chromosome.
-However there are some cases that when a man reduces the alcohol intake, cuts smoking, improves his diet and exercises regularly they increase their sperm count and virility.
- There are various methods available in combating infertility. And according to baby center.com they include
-Use of fertility drugs such as Clomiphene Citrate, which are used to regulate your hormones and trigger ovulation to increase ones’ chances of conceiving.
-Surgery can also help fix genetic defects, open blocked fallopian tubes, remove fibroids, 
-In vitro fertilization (IVF) eggs are removed from your ovaries and then combined in a laboratory with sperm from your partner or a donor. If fertilization is successful, the resulting embryo or embryos are transferred to your uterus.
-Intracytoplasmic sperm injection (ICSI).This helps overcome male fertility problems or to help the fertilization process along when it might be a challenge. During ICSI, a single sperm is injected into a single egg and the resulting embryo is transferred to your uterus.
-Gamete intrafallopian transfer (GIFT) eggs are mixed with sperm in a lab. Laparoscopic surgery is then used to inject the mixture into the fallopian tubes so fertilization can occur naturally inside your body. 
-Zygote intrafallopian transfer (ZIFT) Like GIFT. It involves your eggs and sperm being mixed together in a lab. But during ZIFT, your doctor makes sure the eggs are fertilized and become one-celled embryos called zygotes before using laparoscopic surgery to place them in your fallopian tubes.
-Donor eggs and embryos. Using IVF techniques, an egg donated by another woman is mixed with your partner's sperm and transferred to your uterus. If you use a donor embryo, you take medications to prepare your uterine lining for pregnancy before the embryo or embryos are transferred to your uterus.
-In Kenya the options available are fertility drugs and The IVF treatment. They are various centers available in Kenya and they are giving hope to childless couples. Costs range anyway between 500,000 shs to 1,000,000shs which is out of reach for most Kenyan couples.
-However there is legislation in the works to have the cost being be insured by insurance companies and being inclusive in the NHIF card.
-The list of fertility clinics in Kenya can be found in this link below.<br>
-<div><a href=" http://www.kenyapharmtech.com/fertility-clinics-kenya/">List Of fertility clinics in Kenya</a></div>
-</p>
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-md z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center py-3">
+                <a href="#personal-stories" class="mx-2 my-1 px-3 py-1 rounded-full bg-teal-100 text-teal-800 hover:bg-teal-200 text-sm">Personal Stories</a>
+                <a href="#statistics" class="mx-2 my-1 px-3 py-1 rounded-full bg-teal-100 text-teal-800 hover:bg-teal-200 text-sm">Statistics</a>
+                <a href="#causes" class="mx-2 my-1 px-3 py-1 rounded-full bg-teal-100 text-teal-800 hover:bg-teal-200 text-sm">Causes</a>
+                <a href="#solutions" class="mx-2 my-1 px-3 py-1 rounded-full bg-teal-100 text-teal-800 hover:bg-teal-200 text-sm">Solutions</a>
+                <a href="#resources" class="mx-2 my-1 px-3 py-1 rounded-full bg-teal-100 text-teal-800 hover:bg-teal-200 text-sm">Resources</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <!-- Personal Stories Section -->
+        <section id="personal-stories" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-teal-800 border-b-2 border-teal-300 pb-2">Personal Stories</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8 quote-container">
+                <p class="text-lg italic mb-4">"Why aren't you pregnant what is wrong with you are you cursed" That is what Jacqueline Mukami (real name withheld) was asked by her mother-in law recently.</p>
+                <p>"I cry a lot alone no one comforts you everybody isolates you including your husband". she says amid sobs while holding her handkerchief.</p>
+                <p>"If you are not going to do what comes naturally I will marry another wife and kick you out". Her husband always retorts every evening when he comes home drunk.</p>
+                <p>”He has even stopped taking my food and sleeps in the guest bedroom. Sometimes I feel like committing suicide". She sobs. Each year is her annus horribilis just because she can't conceive.</p>
+            </div>
+            
+            <div class="flex justify-center mb-6">
+                <div class="rounded-lg overflow-hidden shadow-lg max-w-md">
+                    <img src="depressed woman.jpg" alt="Depressed woman" class="w-full">
+                    <div class="px-4 py-2 bg-white">
+                        <p class="text-sm italic text-gray-600 text-center">depressed woman (courtesy of madamnoire.com)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8 quote-container">
+                <p>Jane Nafula (real name withheld) is another one longing for the "fruit of the womb".</p>
+                <p>"When you are single they ask you when you are getting married and when you get married the next question is when you are getting a baby. We have tried". She says (they have been married for 7 years)."</p>
+                <p>"Every year we say this is our year but to no avail. Maybe God is testing our faith and resolve in him bless us with quatriplets".She says while smiling wirily.</p>
+                <p>She is lucky as her husband is very supportive of her condition. But the societal pressure is just too much. So much so that she has avoided many social engagements, parties and family gatherings because of the endless barrage of questions regarding her pregnancy and sometimes being hurled abuse and mocked by her own family and other kin.</p>
+                <p>"When are you adding a family member?"</p>
+                <p>"Utaname mama-in-law when?"</p>
+                <p>"Why don't you want to get pregnant by this man don't you love him?"</p>
+                <p>"Umechelewa sana kuitwa mum.Ona marafiki zako wameolewa na wakona watoto shule.unangoja?"</p>
+                <p>Recently her youngest sister just got married last year and is expecting twins. She has also given social media a wide berth and has become a social pariah.</p>
+                <p>"Every time I meet people and they ask me such questions not knowing that we have had eight miscarriages for the last six years. I feel like a steak is driving through my heart "she says painfully.</p>
+                <p>"My husband is a good man but I can see he is also suffering and is being pressured to add another wife by his family". She laments decision that he is yet to make."But it's getting to him". She says.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8 quote-container">
+                <p>Men have not been left behind. David Lessit (real name withheld) has also has a hidden confession."I don't think I can make a woman pregnant". I have been in a come we stay relationship for three years and my girlfriend (who has a kid from a previous relationship) hasn't gotten pregnant" (she is not on the pill).he says amid taking shots of vodka.</p>
+                <p>"We have been having unprotected sex for the last two years once every three days. But still no kid. Having a male heir let alone a child is a big thing in my community. You are respected and you can walk and talk among elders. But what do I tell people back at home". He says desperately.</p>
+            </div>
+            
+            <div class="flex justify-center">
+                <div class="rounded-lg overflow-hidden shadow-lg max-w-md">
+                    <img src="a depressed man.jpg" alt="A depressed man" class="w-full">
+                    <div class="px-4 py-2 bg-white">
+                        <p class="text-sm italic text-gray-600 text-center">A depressed man (courtesy of pridenews.ca)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="statistics" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-teal-800 border-b-2 border-teal-300 pb-2">Statistics and Facts</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="stat-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl font-bold text-teal-700 mb-2">1 in 5</div>
+                    <p class="text-gray-700">couples in Kenya struggle with infertility</p>
+                </div>
+                
+                <div class="stat-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl font-bold text-teal-700 mb-2">4.2M</div>
+                    <p class="text-gray-700">Kenyans need help to conceive or impregnate</p>
+                </div>
+                
+                <div class="stat-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl font-bold text-teal-700 mb-2">50%</div>
+                    <p class="text-gray-700">drop in sperm count worldwide since 1940</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p>According to Wikipedia infertility the inability to become pregnant/impregnate after 12 months of regular unprotected sex or carry a pregnancy to term.</p>
+                <p>According also to population statistics 1 out of every five couples in Kenya struggle with infertility and 4.2 million Kenyans also need help to conceive or impregnate.</p>
+            </div>
+        </section>
+
+        <!-- Causes Section -->
+        <section id="causes" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-teal-800 border-b-2 border-teal-300 pb-2">Causes of Infertility</h2>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                <div class="border-b">
+                    <button class="tab-btn w-full text-left px-6 py-4 font-medium text-teal-800 bg-teal-50 hover:bg-teal-100 flex justify-between items-center" data-tab="female-causes">
+                        Female Factors <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="female-causes" class="tab-content px-6 py-4">
+                        <p>According to Dr. Alfred Murage, a reproductive medicine consultant at Aga Khan University Hospital's obstetrics and gynecology department, who has worked with couples who have had trouble conceiving naturally for ten years attributes that 30% of the time its due to women factors.</p>
+                        <p class="mt-4">The most common cause of infertility in Kenya is blocked tubes. These can be caused by pelvic inflammatory diseases, which arise from unprotected sex with multiple partners and delays in treating sexually transmitted diseases. Irregular menses and ovulation cycles, previous abortions gone wrong thus affecting the uterus and tubes.</p>
+                        <p class="mt-4">Other causes in women include Fibroids Polycystic Ovarian Syndrome Lack of ovulation, Pelvic tuberculosis and Cancer treatments</p>
+                    </div>
+                </div>
+                
+                <div class="border-b">
+                    <button class="tab-btn w-full text-left px-6 py-4 font-medium text-teal-800 bg-teal-50 hover:bg-teal-100 flex justify-between items-center" data-tab="male-causes">
+                        Male Factors <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="male-causes" class="tab-content px-6 py-4">
+                        <p>According to Dr. Alfred Murage, 30% of the time is due to men factors.</p>
+                        <p class="mt-4">Sperms in many men worldwide has dropped by 50% since 1940.Some of the main causes are Low sperm count Heavy alcohol consumption drinking Heavy smoking, eating junk food, living a sedentary lifestyle without exercise Blocked tubes Men producing antibodies against their own spermA male with sex chromosomes of a genetic female that is XX instead of XYHaving an extra X chromosome.</p>
+                        <p class="mt-4">However there are some cases that when a man reduces the alcohol intake, cuts smoking, improves his diet and exercises regularly they increase their sperm count and virility.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <button class="tab-btn w-full text-left px-6 py-4 font-medium text-teal-800 bg-teal-50 hover:bg-teal-100 flex justify-between items-center" data-tab="other-causes">
+                        Combined & Unexplained Factors <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="other-causes" class="tab-content px-6 py-4">
+                        <p>According to Dr. Alfred Murage, the remaining cases are due to combination of the both male and female or unexplained factors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-teal-800 border-b-2 border-teal-300 pb-2">Treatment Options</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <p>There are various methods available in combating infertility. And according to baby center.com they include:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-teal-800 mb-2">Fertility Drugs</h3>
+                        <p class="text-sm">Use of fertility drugs such as Clomiphene Citrate, which are used to regulate your hormones and trigger ovulation to increase ones' chances of conceiving.</p>
+                    </div>
+                    
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-teal-800 mb-2">Surgery</h3>
+                        <p class="text-sm">Surgery can also help fix genetic defects, open blocked fallopian tubes, remove fibroids.</p>
+                    </div>
+                    
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-teal-800 mb-2">IVF</h3>
+                        <p class="text-sm">In vitro fertilization (IVF) eggs are removed from your ovaries and then combined in a laboratory with sperm from your partner or a donor.</p>
+                    </div>
+                    
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-teal-800 mb-2">ICSI</h3>
+                        <p class="text-sm">Intracytoplasmic sperm injection (ICSI).This helps overcome male fertility problems or to help the fertilization process along when it might be a challenge.</p>
+                    </div>
+                </div>
+                
+                <p class="mt-6">In Kenya the options available are fertility drugs and The IVF treatment. They are various centers available in Kenya and they are giving hope to childless couples. Costs range anyway between 500,000 shs to 1,000,000shs which is out of reach for most Kenyan couples.</p>
+                <p class="mt-4">However there is legislation in the works to have the cost being be insured by insurance companies and being inclusive in the NHIF card.</p>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-teal-800 border-b-2 border-teal-300 pb-2">Resources & Support</h2>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p>The list of fertility clinics in Kenya can be found in this link below.</p>
+                <div class="mt-4">
+                    <a href="http://www.kenyapharmtech.com/fertility-clinics-kenya/" class="inline-flex items-center text-teal-700 hover:text-teal-900 font-medium">
+                        <i class="fas fa-external-link-alt mr-2"></i> List Of fertility clinics in Kenya
+                    </a>
+                </div>
+                
+                <div class="mt-8 p-4 bg-rose-50 rounded-lg border border-rose-200">
+                    <h3 class="font-bold text-lg mb-2 text-rose-800">Need Support?</h3>
+                    <p class="mb-3">If you're struggling with infertility, remember you're not alone. Consider reaching out to:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Mental health professionals</li>
+                        <li>Support groups for individuals/couples dealing with infertility</li>
+                        <li>Trusted family members or friends</li>
+                        <li>Medical specialists in reproductive health</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-teal-900 text-white py-8 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="mb-4">This article aims to raise awareness about infertility issues in Kenya</p>
+            <p class="text-teal-300 text-sm">© 2023 - The Infertility Curse by Bryan "Smokin Joe" Kariuki</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-teal-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in elements on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Tab functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    const tabContent = document.getElementById(tabId);
+                    
+                    // Close all tabs first
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Remove active class from all buttons
+                    tabBtns.forEach(btn => {
+                        btn.querySelector('i').classList.remove('fa-chevron-up');
+                        btn.querySelector('i').classList.add('fa-chevron-down');
+                    });
+                    
+                    // Open selected tab
+                    tabContent.classList.add('active');
+                    btn.querySelector('i').classList.remove('fa-chevron-down');
+                    btn.querySelector('i').classList.add('fa-chevron-up');
+                });
+            });
+            
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('opacity-100');
+                    backToTopBtn.classList.remove('opacity-0');
+                } else {
+                    backToTopBtn.classList.add('opacity-0');
+                    backToTopBtn.classList.remove('opacity-100');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Read aloud functionality
+            const readAloudBtn = document.getElementById('readAloudBtn');
+            let isReading = false;
+            let speech = null;
+            
+            readAloudBtn.addEventListener('click', () => {
+                if ('speechSynthesis' in window) {
+                    if (isReading) {
+                        // Stop reading
+                        window.speechSynthesis.cancel();
+                        readAloudBtn.innerHTML = '<i class="fas fa-volume-up mr-2"></i> Read Aloud';
+                        isReading = false;
+                    } else {
+                        // Start reading
+                        speech = new SpeechSynthesisUtterance();
+                        speech.text = document.body.textContent;
+                        speech.volume = 1;
+                        speech.rate = 1;
+                        speech.pitch = 1;
+                        
+                        window.speechSynthesis.speak(speech);
+                        readAloudBtn.innerHTML = '<i class="fas fa-stop mr-2"></i> Stop Reading';
+                        isReading = true;
+                        
+                        // Reset button when speech ends
+                        speech.onend = function() {
+                            readAloudBtn.innerHTML = '<i class="fas fa-volume-up mr-2"></i> Read Aloud';
+                            isReading = false;
+                        };
+                    }
+                } else {
+                    alert('Sorry, your browser does not support text-to-speech functionality.');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
