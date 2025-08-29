@@ -3,60 +3,468 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryan story</title>
+    <title>Bryan's Web Stories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        news: {
+                            50: '#f8f9fa',
+                            100: '#e9ecef',
+                            200: '#dee2e6',
+                            300: '#ced4da',
+                            400: '#6c757d',
+                            500: '#495057',
+                            600: '#343a40',
+                            700: '#212529',
+                            800: '#1a1d20',
+                            900: '#0d0f11',
+                        },
+                        primary: {
+                            500: '#0d6efd',
+                            600: '#0a58ca',
+                            700: '#084298',
+                        },
+                        accent: {
+                            500: '#dc3545',
+                            600: '#b02a37',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .news-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .read-more {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .read-more::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+        
+        .read-more:hover::after {
+            width: 100%;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "header"
+                "hero"
+                "sidebar"
+                "content"
+                "extra"
+                "related-images"
+                "related-posts"
+                "footer";
+            gap: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas:
+                    "header header"
+                    "hero sidebar"
+                    "content sidebar"
+                    "extra extra"
+                    "related-images related-posts"
+                    "footer footer";
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid-container {
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas:
+                    "header header"
+                    "hero sidebar"
+                    "content sidebar"
+                    "extra extra"
+                    "related-images related-posts"
+                    "footer footer";
+            }
+        }
+        
+        .header { grid-area: header; }
+        .hero { grid-area: hero; }
+        .sidebar { grid-area: sidebar; }
+        .content { grid-area: content; }
+        .extra { grid-area: extra; }
+        .related-images { grid-area: related-images; }
+        .related-posts { grid-area: related-posts; }
+        .footer { grid-area: footer; }
+    </style>
 </head>
-<link rel="stylesheet" href="style.css">
-<body>
-    <div class="container">
-        <div class="grid header">
-        <div class="head">
-          Bryan's Web Stories</div></div>
-        <div class="grid hero">
-          <h1>The Infertility curse</h1>
-<h2><i>By Bryan “Smokin Joe” Kariuki</i></h2>
-“Why aren’t you pregnant what is wrong with you are you cursed “That is what Jacqueline Mukami (real name withheld) was asked by her mother-in law recently.
-“I cry a lot alone no one comforts you everybody isolates you including your husband”. she says amid sobs while holding her handkerchief.
-“If you are not going to do what comes naturally I will marry another wife and kick you out”. Her husband always retorts every evening when he comes home drunk.
-”He has even stopped taking my food and sleeps in the guest bedroom. Sometimes I feel like committing suicide”. She sobs. Each year is her annus horribilis just because she can’t conceive.
- <img src="depressed woman.jpg" alt="a depressed woman">
- <a href="index4.html">Read More</a></p></br>
+<body class="bg-news-50 text-news-700">
+    <!-- Breaking News Bar -->
+    <div class="bg-news-900 text-white py-2 px-4 text-sm">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center overflow-hidden">
+                <span class="bg-accent-500 px-2 py-1 mr-3 font-bold">BREAKING</span>
+                <div class="breaking-news-container whitespace-nowrap">
+                    <span class="breaking-news">New study reveals latest findings on infertility treatments</span>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <span id="current-date" class="text-news-300"></span>
+            </div>
         </div>
-        <div class="grid sidebar">
-          <h1 >All blacks: The greatest sports team in ever</h1>
-    <h3><i>By Smokin’ Joe</i></h3><br>
-    <p><font size="+2">W</font>ith Manchester City beating Manchester United 3-1 a few weeks ago  and seemingly looking comfortable and not even straining while doing it. It boggles the mind what they can achieve this season.
- They even look much stronger than last season where they were the first team in premier league history to reach 100 points out of a possible 114 and they were also the first team in history to score over 100 goals (they scored 106 goals).
-There closest rival, Manchester united was 19 points adrift. Currently in the 2018/2019 they have garnered 32 points out of a possible 33(we are 12 games into the season)
- It is absolutely frightening what this 2018/2019 city team could also achieve and this does not bode well for other teams in the league and are they creating a dynasty?
-This has brought about a conversation as to which is the greatest sports team in history.
-<a href="index3.html">Read More</a></p></br>
+    </div>
+
+    <!-- Header -->
+    <header class="header bg-white shadow-md py-4 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="head text-2xl md:text-3xl font-bold text-news-900 mb-4 md:mb-0 fade-in">
+                Bryan's Web Stories
+            </div>
+            
+            <nav class="w-full md:w-auto">
+                <ul class="flex flex-wrap justify-center space-x-1 md:space-x-4">
+                    <li><a href="#" class="px-3 py-2 text-news-700 hover:bg-news-100 rounded-md text-sm md:text-base">Home</a></li>
+                    <li><a href="#" class="px-3 py-2 text-news-700 hover:bg-news-100 rounded-md text-sm md:text-base">Sports</a></li>
+                    <li><a href="#" class="px-3 py-2 text-news-700 hover:bg-news-100 rounded-md text-sm md:text-base">History</a></li>
+                    <li><a href="#" class="px-3 py-2 text-news-700 hover:bg-news-100 rounded-md text-sm md:text-base">Health</a></li>
+                    <li><a href="#" class="px-3 py-2 text-news-700 hover:bg-news-100 rounded-md text-sm md:text-base">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mt-4 md:mt-0 flex items-center">
+                <button class="p-2 rounded-full hover:bg-news-100">
+                    <i class="fas fa-search text-news-700"></i>
+                </button>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-news-100 ml-2">
+                    <i class="fas fa-moon text-news-700"></i>
+                </button>
+            </div>
         </div>
-        <div class="grid content">
-          <p><h2><i>Locusta; World’s first serial killer and assassin of Emperors</i></h2><br>
-            <h3><i>By Smokin’ Joe</i></h3><br>
-            <p><font size="+2">L</font>ocusta was a notorious poison maker who was active in the Claudius-Nero reign around 1ST Century Roman Empire. She was born in Gaul and as a young girl was taught about the healing herbs and the poisonous herbs.
-            When she came of age she went to Rome during Emperor Claudius Reign. During that time in the ‘’Eternal city” assassinations were rife especially among nobility.
-            Therefore Locusta found herself at home as she marketed herself as a posion maker. It is said that she considered poison making her magnum opus. Thus she had a booming business especially among the nobility.
-            <a href="index2.html">Read More</a></p></br>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="container mx-auto px-4 py-8 grid-container">
+        <!-- Hero Section -->
+        <article class="hero news-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+                <span class="text-xs font-semibold text-accent-500 uppercase">Health & Society</span>
+                <h1 class="text-2xl md:text-3xl font-bold mt-2 mb-3 text-news-900">The Infertility Curse</h1>
+                <h2 class="text-lg italic text-news-600 mb-4"><i>By Bryan "Smokin Joe" Kariuki</i></h2>
+                
+                <div class="prose max-w-none">
+                    <p class="mb-4">"Why aren't you pregnant what is wrong with you are you cursed" That is what Jacqueline Mukami (real name withheld) was asked by her mother-in law recently.</p>
+                    <p class="mb-4">"I cry a lot alone no one comforts you everybody isolates you including your husband". she says amid sobs while holding her handkerchief.</p>
+                    <p class="mb-4">"If you are not going to do what comes naturally I will marry another wife and kick you out". Her husband always retorts every evening when he comes home drunk.</p>
+                    <p class="mb-6">"He has even stopped taking my food and sleeps in the guest bedroom. Sometimes I feel like committing suicide". She sobs. Each year is her annus horribilis just because she can't conceive.</p>
+                </div>
+                
+                <div class="mb-6 rounded-lg overflow-hidden">
+                    <img src="depressed woman.jpg" alt="A depressed woman" class="w-full">
+                    <p class="text-sm italic text-news-400 mt-2">depressed woman (courtesy of madamnoire.com)</p>
+                </div>
+                
+                <a href="index4.html" class="read-more font-semibold text-primary-500 hover:text-primary-600">Read More</a>
+            </div>
+        </article>
+
+        <!-- Sidebar -->
+        <article class="sidebar news-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+                <span class="text-xs font-semibold text-accent-500 uppercase">Sports</span>
+                <h1 class="text-xl md:text-2xl font-bold mt-2 mb-3 text-news-900">All blacks: The greatest sports team in ever</h1>
+                <h3 class="text-md italic text-news-600 mb-4"><i>By Smokin' Joe</i></h3>
+                
+                <div class="prose max-w-none">
+                    <p class="mb-4"><span class="text-2xl font-bold float-left mr-2">W</span>ith Manchester City beating Manchester United 3-1 a few weeks ago and seemingly looking comfortable and not even straining while doing it. It boggles the mind what they can achieve this season.</p>
+                    <p class="mb-4">They even look much stronger than last season where they were the first team in premier league history to reach 100 points out of a possible 114 and they were also the first team in history to score over 100 goals (they scored 106 goals).</p>
+                    <p class="mb-4">There closest rival, Manchester united was 19 points adrift. Currently in the 2018/2019 they have garnered 32 points out of a possible 33(we are 12 games into the season).</p>
+                    <p class="mb-4">It is absolutely frightening what this 2018/2019 city team could also achieve and this does not bode well for other teams in the league and are they creating a dynasty?</p>
+                    <p class="mb-6">This has brought about a conversation as to which is the greatest sports team in history.</p>
+                </div>
+                
+                <a href="index3.html" class="read-more font-semibold text-primary-500 hover:text-primary-600">Read More</a>
+            </div>
+        </article>
+
+        <!-- Content -->
+        <article class="content news-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+                <span class="text-xs font-semibold text-accent-500 uppercase">History</span>
+                <h2 class="text-xl md:text-2xl font-bold mt-2 mb-3 text-news-900"><i>Locusta; World's first serial killer and assassin of Emperors</i></h2>
+                <h3 class="text-md italic text-news-600 mb-4"><i>By Smokin' Joe</i></h3>
+                
+                <div class="prose max-w-none">
+                    <p class="mb-4"><span class="text-2xl font-bold float-left mr-2">L</span>ocusta was a notorious poison maker who was active in the Claudius-Nero reign around 1ST Century Roman Empire. She was born in Gaul and as a young girl was taught about the healing herbs and the poisonous herbs.</p>
+                    <p class="mb-4">When she came of age she went to Rome during Emperor Claudius Reign. During that time in the ''Eternal city" assassinations were rife especially among nobility.</p>
+                    <p class="mb-6">Therefore Locusta found herself at home as she marketed herself as a posion maker. It is said that she considered poison making her magnum opus. Thus she had a booming business especially among the nobility.</p>
+                </div>
+                
+                <a href="index2.html" class="read-more font-semibold text-primary-500 hover:text-primary-600">Read More</a>
+            </div>
+        </article>
+
+        <!-- Extra -->
+        <article class="extra bg-primary-50 rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold mb-4 text-news-900 border-b border-primary-200 pb-2">About the Author</h3>
+            <div class="flex items-start">
+                <div class="flex-shrink-0 mr-4">
+                    <img src="https://github.com/username.png" alt="Author Profile" class="w-16 h-16 rounded-full shadow-md">
+                </div>
+                <div>
+                    <p class="mb-3">My name is Bryan Kariuki but my alter-ego is Smokin Joe i am also a web developer you can check out some of my projects on my Github profile below.</p>
+                    <a href="https://github.com/username" target="_blank" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                        <i class="fab fa-github text-xl mr-2"></i> GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Related Images -->
+        <section class="related-images">
+            <h3 class="text-xl font-bold mb-4 text-news-900 border-b border-news-200 pb-2">Related Images</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://via.placeholder.com/300x200/f8f9fa/6c757d?text=Sports" alt="Sports" class="w-full h-32 object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://via.placeholder.com/300x200/f8f9fa/6c757d?text=History" alt="History" class="w-full h-32 object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://via.placeholder.com/300x200/f8f9fa/6c757d?text=Health" alt="Health" class="w-full h-32 object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Posts -->
+        <section class="related-posts">
+            <h3 class="text-xl font-bold mb-4 text-news-900 border-b border-news-200 pb-2">Related Posts</h3>
+            <ul class="space-y-3">
+                <li class="pb-2 border-b border-news-100">
+                    <a href="#" class="hover:text-primary-500 font-medium">The Impact of Sports on Mental Health</a>
+                </li>
+                <li class="pb-2 border-b border-news-100">
+                    <a href="#" class="hover:text-primary-500 font-medium">Historical Female Figures Often Overlooked</a>
+                </li>
+                <li class="pb-2 border-b border-news-100">
+                    <a href="#" class="hover:text-primary-500 font-medium">Understanding Fertility Treatments in Modern Medicine</a>
+                </li>
+                <li class="pb-2 border-b border-news-100">
+                    <a href="#" class="hover:text-primary-500 font-medium">Greatest Teams in Sports History</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-primary-500 font-medium">Ancient Roman Society and Culture</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-news-900 text-white py-8 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">Bryan's Web Stories</h3>
+                <p class="text-news-300">Exploring diverse topics from sports to history and health.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-4">Categories</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-news-300 hover:text-white">Sports</a></li>
+                    <li><a href="#" class="text-news-300 hover:text-white">History</a></li>
+                    <li><a href="#" class="text-news-300 hover:text-white">Health</a></li>
+                    <li><a href="#" class="text-news-300 hover:text-white">Society</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                <p class="mb-2">Email: <a href="mailto:someone@example.com" class="text-news-300 hover:text-white">kariukibryan6@gmail.com</a></p>
+                <p class="mb-2">Phone: <a href="tel:+254721636909" class="text-news-300 hover:text-white">(254) 721-636909</a></p>
+                <address class="text-news-300 not-italic">
+                    Marurui, Nairobi, Kenya.
+                </address>
+                
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-news-300 hover:text-white">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-news-300 hover:text-white">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-news-300 hover:text-white">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-news-300 hover:text-white">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="grid extra">
-          <p>
-            About the author
-            My name is Bryan Kariuki but my alter-ego is Smokin Joe i am also a web developer you vcan check out some of my projects on my Github profile below.
-            <a href="https://github.com/username" target="_blank">
-              <img src="https://github.com/username.png" alt="GitHub Profile Picture" width="50" height="50">
-          </a>
-          </p>
+        
+        <div class="container mx-auto mt-8 pt-6 border-t border-news-700 text-center text-news-400 text-sm">
+            <p>© 2023 Bryan's Web Stories. All rights reserved.</p>
         </div>
-        <div class="grid related-images">Related Images</div>
-        <div class="grid related-posts">Related Posts</div>
-        <div class="grid footer">Contact us on</br>
-          <p>Email:<a href="mailto:someone@example.com">kariukibryan6@gmail.com</a></p></br>
-          Phone: <a href="tel:+254721636909">(254) 721-636909</a>
-    <address>
-        Marurui, Nairobi, Kenya.
-    </address>
-        </div>
-      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary-500 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current date
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', options);
+            
+            // Fade in elements on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, fadeInOptions);
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('opacity-100');
+                    backToTopBtn.classList.remove('opacity-0');
+                } else {
+                    backToTopBtn.classList.add('opacity-0');
+                    backToTopBtn.classList.remove('opacity-100');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Theme toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            let isDarkMode = false;
+            
+            themeToggle.addEventListener('click', () => {
+                isDarkMode = !isDarkMode;
+                if (isDarkMode) {
+                    document.body.classList.add('bg-news-900', 'text-news-100');
+                    document.body.classList.remove('bg-news-50', 'text-news-700');
+                    themeToggle.innerHTML = '<i class="fas fa-sun text-news-100"></i>';
+                } else {
+                    document.body.classList.remove('bg-news-900', 'text-news-100');
+                    document.body.classList.add('bg-news-50', 'text-news-700');
+                    themeToggle.innerHTML = '<i class="fas fa-moon text-news-700"></i>';
+                }
+            });
+            
+            // Breaking news ticker
+            const breakingNews = [
+                "New study reveals latest findings on infertility treatments",
+                "All Blacks continue dominance in international rugby",
+                "Historical discoveries shed light on ancient Roman society",
+                "Sports medicine advancements helping athletes recover faster"
+            ];
+            
+            let currentNewsIndex = 0;
+            const newsElement = document.querySelector('.breaking-news');
+            
+            function updateBreakingNews() {
+                newsElement.style.opacity = '0';
+                
+                setTimeout(() => {
+                    currentNewsIndex = (currentNewsIndex + 1) % breakingNews.length;
+                    newsElement.textContent = breakingNews[currentNewsIndex];
+                    newsElement.style.opacity = '1';
+                }, 500);
+            }
+            
+            setInterval(updateBreakingNews, 5000);
+        });
+    </script>
 </body>
 </html>
