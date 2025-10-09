@@ -7,7 +7,7 @@ This site highlights my skills, projects, and personal journey in software devel
 ---
 
 ## 🌐 Live Demo
-👉 [Visit Bryan Authentic’s Portfolio](#)  
+👉 [bryan-authentics.vercel.app](#)  
 *(Add your live site link once deployed — e.g. Render, Netlify, or Vercel)*
 
 ---
