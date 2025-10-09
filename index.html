@@ -25,14 +25,17 @@
 <div class="right">
 <a href="https://github.com/bryanbudah" target="_blank"><i class="fa-brands fa-github"></i><span>Github</span></a>
 <a href="https://www.linkedin.com/in/bryan-k-25025387/" target="_blank"><i class="fa-brands fa-linkedin"></i><span>Linkedin</span></a>
-<a href="mailto:kariukibryan6@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span>E-mail</span></a>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=webdeveloperjoekariuki@gmail.com" target="_blank">
+  <i class="fa-solid fa-envelope"></i><span>Email</span>
+</a>
+
 </div>
 </nav>
 <main>
 <section class="hero-section">
 <div class="text">
 <h2>Hi,My name is Bryan Kariuki </h2>
-<p>I am a fullstack developer proficient in html,css and javascript.
+<p>I am a fullstack developer proficient in html,css,javascript,react and django.
 I am also a freelance writer in various subjects ranging from sports,human intrest stories and science.
 hence bryan is the name web development is the game.
 </p>
@@ -86,11 +89,6 @@ hence bryan is the name web development is the game.
 </div>
 
 <div class="cell">
-<img src="images/node.jpg"alt="node">
-<span>NODE</span>
-</div>
-
-<div class="cell">
 <img src="images/react.png"alt="react">
 <span>REACT</span>
 </div>
@@ -115,37 +113,110 @@ hence bryan is the name web development is the game.
 <div class="text">“Working with Bryan Authentics has been a great experience. As a full-stack developer, he combines strong technical expertise with clear communication and professionalism. He quickly understood our requirements, delivered clean and efficient solutions, and was proactive in suggesting improvements that added real value to the project. I would gladly work with him again.”".</div>
 </div>
 </section>
-<section id="contact" class="contact-section">
+<!-- Footer Section -->
+<footer style="
+  background-color: #000;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">Bryan Authentic’s</h3>
+    <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
+      Crafting digital experiences with creativity and purpose.<br>
+      Reach out through my profiles or email anytime.
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 20px;">
+      <a href="https://github.com/bryanbudah" target="_blank" style="color: white; font-size: 1.4rem;">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/bryan-k-25025387/" target="_blank" style="color: white; font-size: 1.4rem;">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=webdeveloperjoekariuki@gmail.com" target="_blank">
+  <i class="fa-solid fa-envelope"></i><span>Email</span>
+</a>
+
+    </div>
+
+    <p style="font-size: 0.9rem; color: #ccc;">
+      &copy; <span id="year"></span> Bryan Authentic’s. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Auto-update the year in the footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!--<section id="contact" class="contact-section">
 <h2>Contact</h2>
 <div class="group">
 <div class="text">
-Hey there, you can always reach out for my services or for any comment or critiscm.
-</div>
-<form>
-    <label for="name">Name</label>
-    <input type="text" id="name">
+Hey there, you can always reach out for my services or for any comment or critiscm.</div>
+   <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required
+        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
 
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required
+        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
 
-<label for="email">Email</label>
-          <input type="email" id="email">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required
+        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;"></textarea>
 
-          <label for="message">Message</label>
-          <textarea id="message" cols="30" rows="10"></textarea>
-
-          <button type="submit">Send Message</button>
-</form>
+      <button type="submit"
+        style="background-color: #4f46e5; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer;">
+        Send Message
+      </button>
+    </form>
 </div>
 
 </section>
 </main>
 <button data-theme-toggle>Toggle theme</button>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
+  // Initialize EmailJS with your PUBLIC key
+  (function () {
+    emailjs.init("NiDI3AkGtQ7S1O_6y"); // 🟢 Replace this with your real public key
+  })();
+
+  // Handle form submission
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    emailjs.send("service_fvy8vbb", "template_xwvr1ie", {
+      from_name: name,
+      from_email: email,
+      message: message,
+    })
+      .then(function () {
+        alert("✅ Message sent successfully! Check your inbox.");
+        e.target.reset();
+      }, function (error) {
+        console.error("❌ Failed to send message:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+  });
  const button = document.querySelector('[data-theme-toggle]');
 const html = document.querySelector('html');
 
 button.addEventListener('click', () => {
   html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
 });   
-</script>
+</script>-->
 </body>
 </html>
