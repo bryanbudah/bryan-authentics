@@ -186,7 +186,7 @@ RESTful APIs, authentication, and production-ready backend development.
 </div>
 
     <div class="project-card">
-      <h3>Children’s Home Website</h3>
+      <h3>Children's Home Website</h3>
       <p>
         Full-stack donation platform with M-Pesa integration, gallery, and dynamic content.
       </p>
@@ -199,27 +199,24 @@ RESTful APIs, authentication, and production-ready backend development.
       </div>
     </div>
 
+    <div class="project-card">
+      <h3>StanMatt Supermarket E-commerce</h3>
+      <p>
+        A modern red-and-white supermarket e-commerce platform built with Django,
+        HTML, CSS and JavaScript. Features rotating offers, product categories
+        and search, discount badges, a full cart and checkout flow, Card/M-Pesa
+        payment selection, user accounts, and a Django admin for managing
+        products, categories and orders.
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/bryanbudah/stanmatt-e-commerce-website.git" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://stanmatt-e-commerce-website.onrender.com/" target="_blank">🌐 Live Demo</a>
+      </div>
+    </div>
+
   </div>
-
-  <div class="project-card">
-  <h3>StanMatt Supermarket E-commerce</h3>
-  <p>
-    A modern red-and-white supermarket e-commerce platform built with Django,
-    HTML, CSS and JavaScript. Features rotating offers, product categories
-    and search, discount badges, a full cart and checkout flow, Card/M-Pesa
-    payment selection, user accounts, and a Django admin for managing
-    products, categories and orders.
-  </p>
-  <div class="project-links">
-    <a href="https://github.com/bryanbudah/stanmatt-e-commerce-website.git" target="_blank">
-      <i class="fa-brands fa-github"></i> GitHub
-    </a>
-    <a href="https://stanmatt-e-commerce-website.onrender.com/" target="_blank">🌐 Live Demo</a>
-  </div>
-</div>
-
-
-</div>
 
 </section>
 <section id="testimony" class="testimony-section">
@@ -230,7 +227,7 @@ RESTful APIs, authentication, and production-ready backend development.
     <p>Zack Styles</p>
     <p>ZDev studio.</p>
 </div>
-<div class="text">“Working with Bryan Authentics has been a great experience. As a full-stack developer, he combines strong technical expertise with clear communication and professionalism. He quickly understood our requirements, delivered clean and efficient solutions, and was proactive in suggesting improvements that added real value to the project. I would gladly work with him again.”".</div>
+<div class="text">"Working with Bryan Authentics has been a great experience. As a full-stack developer, he combines strong technical expertise with clear communication and professionalism. He quickly understood our requirements, delivered clean and efficient solutions, and was proactive in suggesting improvements that added real value to the project. I would gladly work with him again."".</div>
 </div>
 </section>
 <!-- Footer Section -->
@@ -244,7 +241,7 @@ RESTful APIs, authentication, and production-ready backend development.
   width: 100%;
 ">
   <div style="max-width: 900px; margin: 0 auto;">
-    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">Bryan Authentic’s</h3>
+    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">Bryan Authentic's</h3>
     <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 20px;">
       Crafting digital experiences with creativity and purpose.<br>
       Reach out through my profiles or email anytime.
@@ -264,7 +261,7 @@ RESTful APIs, authentication, and production-ready backend development.
     </div>
 
     <p style="font-size: 0.9rem; color: #ccc;">
-      &copy; <span id="year"></span> Bryan Authentic’s. All rights reserved.
+      &copy; <span id="year"></span> Bryan Authentic's. All rights reserved.
     </p>
   </div>
 </footer>
@@ -274,69 +271,5 @@ RESTful APIs, authentication, and production-ready backend development.
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<!--<section id="contact" class="contact-section">
-<h2>Contact</h2>
-<div class="group">
-<div class="text">
-Hey there, you can always reach out for my services or for any comment or critiscm.</div>
-   <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required
-        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required
-        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required
-        style="padding: 10px; border: 1px solid #ccc; border-radius: 6px;"></textarea>
-
-      <button type="submit"
-        style="background-color: #4f46e5; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer;">
-        Send Message
-      </button>
-    </form>
-</div>
-
-</section>
-</main>
-<button data-theme-toggle>Toggle theme</button>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  // Initialize EmailJS with your PUBLIC key
-  (function () {
-    emailjs.init("NiDI3AkGtQ7S1O_6y"); // 🟢 Replace this with your real public key
-  })();
-
-  // Handle form submission
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    emailjs.send("service_fvy8vbb", "template_xwvr1ie", {
-      from_name: name,
-      from_email: email,
-      message: message,
-    })
-      .then(function () {
-        alert("✅ Message sent successfully! Check your inbox.");
-        e.target.reset();
-      }, function (error) {
-        console.error("❌ Failed to send message:", error);
-        alert("Something went wrong. Please try again later.");
-      });
-  });
- const button = document.querySelector('[data-theme-toggle]');
-const html = document.querySelector('html');
-
-button.addEventListener('click', () => {
-  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-});   
-</script>-->
 </body>
 </html>

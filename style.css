@@ -291,10 +291,14 @@ nav .right a:last-child{
 }
 
 .projects-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
   gap: 20px;
   justify-content: center;
+}
+
+.project-card {
+  text-align: center;
 }
 
 .project-card {
@@ -320,4 +324,10 @@ nav .right a:last-child{
   text-decoration: none;
   color: #4f46e5;
   font-weight: 500;
+}
+
+.projects-section h2,
+.project-card h3 {
+  color: var(--text-color);
+  text-decoration: none;
 }
